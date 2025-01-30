@@ -34,11 +34,10 @@ app.get("/", (req, res) => {
 
 app.get("/payment", async (req, res) => {
     try {
-        const orderID = generateOrderID();
         const request = {
             order_amount: 1.00,
             order_currency: "INR",
-            order_id: orderID,
+            order_id: generateOrderID(),
             customer_details: {
                 customer_id: crypto.randomUUID(),
                 customer_name: "John Doe",
